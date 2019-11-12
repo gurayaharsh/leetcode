@@ -1,0 +1,22 @@
+// Problem # 383
+
+class Solution {
+    public boolean canConstruct(String ransomNote, String magazine) {
+        
+        int[] freq = new int[26];
+        
+        for(char Mletter : magazine.toCharArray()){
+            freq[Mletter-'a']++;
+        }
+        
+        for(char Rletter : ransomNote.toCharArray()){
+            freq[Rletter-'a']--;
+            if(freq[Rletter-'a']<0){
+                return false;
+            }
+        }
+    
+        
+        return true;
+    }
+} 
