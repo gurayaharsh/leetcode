@@ -17,6 +17,11 @@ class Solution {
         
         TreeNode curr = root; 
         
+
+        /* Technically you only want to keep going left and adding to the stack while curr !=null 
+           But you want to continue the function while the !stack.isEmpty()
+           The problem is the stack is empty to begin with, however we should still keep going since we haven't reached the end of the tree  */
+
         while(curr!= null || !stack.isEmpty()){
             while(curr!=null){
                 stack.push(curr);
